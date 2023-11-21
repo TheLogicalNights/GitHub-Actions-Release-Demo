@@ -8,5 +8,5 @@ description: 'TheLogicalNights SpringBoot App Runner '
 #        default: 'default value'
 
 runs:
-    using: 'docker'
-    image: 'Dockerfile'
+    using: 'java'
+    main: 'src/main/java/com/example/GitHubActionsReleaseDemo/GitHubActionsReleaseDemoApplication.java'
