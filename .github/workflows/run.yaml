@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Use Your Published Action
-        uses: TheLogicalNights/GitHub-Actions-Release-Demo@V1.0.2
+        uses: TheLogicalNights/GitHub-Actions-Release-Demo@v1.0.2
 #  build:
 #    runs-on: ubuntu-latest
 #    steps:
