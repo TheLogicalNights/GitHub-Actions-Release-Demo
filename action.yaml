@@ -49,7 +49,7 @@ runs:
     - name: Run Spring Boot App
       run: java -jar target/GitHubActionsReleaseDemo-0.0.1-SNAPSHOT.jar
       env:
-        USERNAME: ${{ inputs.USERNAME }}
-        PASSWORD: ${{ inputs.PASSWORD }}
+        USERNAME: ${{ inputs.Username }}
+        PASSWORD: ${{ inputs.Password }}
       shell: bash
       
