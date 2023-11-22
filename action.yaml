@@ -48,4 +48,8 @@ runs:
 
     - name: Run Spring Boot App
       run: java -jar target/GitHubActionsReleaseDemo-0.0.1-SNAPSHOT.jar
+      env:
+        USERNAME: ${{ inputs.USERNAME }}
+        PASSWORD: ${{ inputs.PASSWORD }}
       shell: bash
+      

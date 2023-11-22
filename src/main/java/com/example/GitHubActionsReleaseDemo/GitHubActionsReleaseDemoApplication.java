@@ -12,8 +12,8 @@ public class GitHubActionsReleaseDemoApplication {
     public static void main(String[] args) {
 		ConfigurableApplicationContext ctx = SpringApplication.run(GitHubActionsReleaseDemoApplication.class, args);
 
-        String username = System.getenv("Username");
-        String password = System.getenv("Password");
+        String username = System.getenv("USERNAME");
+        String password = System.getenv("PASSWORD");
 
 
         logger.info("[Username: " + username + "]");
