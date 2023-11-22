@@ -16,7 +16,7 @@ jobs:
         uses: TheLogicalNights/GitHub-Actions-Release-Demo@v1.0.5
         with:
           Username: 'TheLogicalNights'
-          Password: 'changeit'
+          Password: 'ChangeIt'
 
 #  build:
 #    runs-on: ubuntu-latest
