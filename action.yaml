@@ -4,10 +4,13 @@ branding:
   icon: 'package'
   color: 'blue'
 
-#inputs:
-#  version:
-#    description: 'The version of the application to release.'
-#    required: true
+inputs:
+  Username:
+    description: 'Username to login'
+    required: true
+  Password:
+    description: "Password to login"
+    required: true
 
 runs:
   using: composite
