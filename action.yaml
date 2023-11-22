@@ -18,10 +18,9 @@ runs:
     - name: Checkout code
       uses: actions/checkout@v3
       with:
-        repository: TheLogicalNights/config-repo
+        repository: TheLogicalNights/GitHub-Actions-Release-Demo
         ref: main
-        path: src/main/resources/
-        token: ${{ secrets.ACCESS_TOKEN }}
+        path: ./
 
     - name: Debug log
       run: ls -a
