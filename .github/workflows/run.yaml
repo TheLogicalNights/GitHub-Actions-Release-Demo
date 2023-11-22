@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
       
       - name: GitHub Actions Release Demo
-        uses: TheLogicalNights/GitHub-Actions-Release-Demo@v1.0.6
+        uses: TheLogicalNights/GitHub-Actions-Release-Demo@v1.0.7
         with:
           Username: 'TheLogicalNights'
           Password: 'ChangeIt'
