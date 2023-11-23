@@ -60,4 +60,10 @@ runs:
         USERNAME: ${{ inputs.Username }}
         PASSWORD: ${{ inputs.Password }}
       shell: bash
+    
+    - name: Archive JAR Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: GitHubActions-Artifact
+        path: outputs/result.txt
       
