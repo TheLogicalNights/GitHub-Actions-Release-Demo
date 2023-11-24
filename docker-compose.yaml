@@ -2,7 +2,7 @@ services:
   myapp:
     image: sadhav512/github-actions:latest
     environment:
-      - USERNAME=${inputs.USERNAME}
-      - PASSWORD=${inputs.PASSWORD}
+      - USERNAME=${USERNAME}
+      - PASSWORD=${PASSWORD}
     ports:
       - "8080:8080"
