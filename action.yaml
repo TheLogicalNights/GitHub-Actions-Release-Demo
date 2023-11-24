@@ -31,7 +31,6 @@ runs:
       
     - name: Debug log
       run: |
-        ls -a
         cat outputs/result.txt
       shell: bash
 #
