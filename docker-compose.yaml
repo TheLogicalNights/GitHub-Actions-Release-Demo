@@ -1,6 +1,8 @@
 services:
   myapp:
     image: sadhav512/github-actions:latest
+    volumes:
+      - /outputs:/app/outputs
     environment:
       - USERNAME=${USERNAME}
       - PASSWORD=${PASSWORD}
