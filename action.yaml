@@ -24,10 +24,11 @@ runs:
 
     - name: Deploy Docker Compose
       run: docker-compose up
-      shell: bash
-      with:
+      env:
         USERNAME: ${{ inputs.USERNAME }}
         PASSWORD: ${{ inputs.PASSWORD }}
+      shell: bash
+      
 #
 ##    - name: Debug log
 ##      run: ls -a
