@@ -2,9 +2,16 @@ services:
   myapp:
     image: sadhav512/github-actions:latest
     volumes:
-      - outputs:/app/outputs
+      - outputs:/app/outputs:rw
     environment:
       - USERNAME=${USERNAME}
       - PASSWORD=${PASSWORD}
     ports:
       - "8080:8080"
+volumes:
+  outputs:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: outputs
