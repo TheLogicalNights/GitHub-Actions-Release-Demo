@@ -23,7 +23,7 @@ runs:
         path: ./
 
     - name: Deploy Docker Compose
-      run: docker-compose up -d
+      run: docker-compose up
       shell: bash
 #
 ##    - name: Debug log
