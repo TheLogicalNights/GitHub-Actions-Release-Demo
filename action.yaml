@@ -30,7 +30,9 @@ runs:
       shell: bash
       
     - name: Debug log
-      run: ls -a
+      run: |
+        ls -a
+        cat outputs/result.txt
       shell: bash
 #
 #    - name: Grant execute permissions to mvnw
