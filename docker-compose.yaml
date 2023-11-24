@@ -1,4 +1,3 @@
-version: '1'
 services:
   myapp:
     image: sadhav512/github-actions:latest
