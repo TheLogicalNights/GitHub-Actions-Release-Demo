@@ -33,6 +33,13 @@ runs:
       run: |
         cat outputs/result.txt
       shell: bash
+    
+    - name: Archive JAR Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: GitHubActions-Artifact
+        path: outputs/result.txt
+        
 #
 #    - name: Grant execute permissions to mvnw
 #      run: chmod +x ./mvnw
@@ -69,8 +76,3 @@ runs:
 #        PASSWORD: ${{ inputs.Password }}
 #      shell: bash
 #
-#    - name: Archive JAR Artifact
-#      uses: actions/upload-artifact@v3
-#      with:
-#        name: GitHubActions-Artifact
-#        path: outputs/result.txt
