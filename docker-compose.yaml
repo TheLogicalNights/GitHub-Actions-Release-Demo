@@ -1,7 +1,7 @@
 version: '1.0.1'
 services:
   myapp:
-    image: your-docker-hub-username/my-spring-boot-app:${{ github.sha }}
+    image: sadhav512/github-actions:latest
     environment:
       - USERNAME=${{ inputs.USERNAME }}
       - PASSWORD=${{ inputs.PASSWORD }}
