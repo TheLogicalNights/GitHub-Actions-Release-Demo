@@ -5,10 +5,10 @@ branding:
   color: 'blue'
 
 inputs:
-  Username:
+  USERNAME:
     description: 'Username to login'
     required: true
-  Password:
+  PASSWORD:
     description: "Password to login"
     required: true
 
@@ -17,53 +17,57 @@ runs:
   steps:
     - name: Checkout code
       uses: actions/checkout@v3
-      with:
-        repository: TheLogicalNights/GitHub-Actions-Release-Demo
-        ref: main
-        path: ./
-
-#    - name: Debug log
-#      run: ls -a
-#      shell: bash
-      
-    - name: Grant execute permissions to mvnw
-      run: chmod +x ./mvnw
-      shell: bash
-
-    - name: Set up JDK 17
-      uses: actions/setup-java@v3
-      with:
-        java-version: '17'
-        distribution: 'oracle'
-
-    - name: Cache Maven dependencies
-      uses: actions/cache@v3
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-maven-
-
-    - name: Build Spring Boot App
-      run: ./mvnw clean package
-      shell: bash
-
-    - name: Store Maven dependencies in cache
-      uses: actions/cache@v3
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-
-    - name: Run Spring Boot App
-      run: java -jar target/GitHubActionsReleaseDemo-0.0.1-SNAPSHOT.jar
-      env:
-        USERNAME: ${{ inputs.Username }}
-        PASSWORD: ${{ inputs.Password }}
-      shell: bash
     
-    - name: Archive JAR Artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: GitHubActions-Artifact
-        path: outputs/result.txt
+    - name: Deploy Docker Compose
+      run: docker-compose up -d
+      shell: bash
       
+#      with:
+#        repository: TheLogicalNights/GitHub-Actions-Release-Demo
+#        ref: main
+#        path: ./
+#
+##    - name: Debug log
+##      run: ls -a
+##      shell: bash
+#
+#    - name: Grant execute permissions to mvnw
+#      run: chmod +x ./mvnw
+#      shell: bash
+#
+#    - name: Set up JDK 17
+#      uses: actions/setup-java@v3
+#      with:
+#        java-version: '17'
+#        distribution: 'oracle'
+#
+#    - name: Cache Maven dependencies
+#      uses: actions/cache@v3
+#      with:
+#        path: ~/.m2/repository
+#        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+#        restore-keys: |
+#          ${{ runner.os }}-maven-
+#
+#    - name: Build Spring Boot App
+#      run: ./mvnw clean package
+#      shell: bash
+#
+#    - name: Store Maven dependencies in cache
+#      uses: actions/cache@v3
+#      with:
+#        path: ~/.m2/repository
+#        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+#
+#    - name: Run Spring Boot App
+#      run: java -jar target/GitHubActionsReleaseDemo-0.0.1-SNAPSHOT.jar
+#      env:
+#        USERNAME: ${{ inputs.Username }}
+#        PASSWORD: ${{ inputs.Password }}
+#      shell: bash
+#
+#    - name: Archive JAR Artifact
+#      uses: actions/upload-artifact@v3
+#      with:
+#        name: GitHubActions-Artifact
+#        path: outputs/result.txt
