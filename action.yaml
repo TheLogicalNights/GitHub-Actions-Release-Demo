@@ -17,15 +17,14 @@ runs:
   steps:
     - name: Checkout code
       uses: actions/checkout@v3
-    
+      with:
+        repository: TheLogicalNights/GitHub-Actions-Release-Demo
+        ref: main
+        path: ./
+
     - name: Deploy Docker Compose
       run: docker-compose up -d
       shell: bash
-      
-#      with:
-#        repository: TheLogicalNights/GitHub-Actions-Release-Demo
-#        ref: main
-#        path: ./
 #
 ##    - name: Debug log
 ##      run: ls -a
