@@ -29,10 +29,9 @@ runs:
         PASSWORD: ${{ inputs.PASSWORD }}
       shell: bash
       
-#
-##    - name: Debug log
-##      run: ls -a
-##      shell: bash
+    - name: Debug log
+      run: ls -a
+      shell: bash
 #
 #    - name: Grant execute permissions to mvnw
 #      run: chmod +x ./mvnw
