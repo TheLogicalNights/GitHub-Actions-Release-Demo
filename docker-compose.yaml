@@ -2,7 +2,7 @@ services:
   myapp:
     image: sadhav512/github-actions:latest
     environment:
-      - USERNAME="Swapnil"
-      - PASSWORD="123456"
+      - USERNAME=${USERNAME}
+      - PASSWORD=${PASSWORD}
     ports:
       - "8080:8080"
