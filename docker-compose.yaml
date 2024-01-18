@@ -13,7 +13,7 @@ services:
       - PROXY_USERNAME:null
       - PROXY_PASSWORD:null
       - WEBAPP_ID:1069358967
-      - SCAN_NAME:New WAS Vulnerability Scan launched from API
+      - SCAN_NAME:"New WAS Vulnerability Scan launched from API"
       - SCAN_TYPE:VULNERABILITY
       - AUTH_RECORD:useDefault
       - AUTH_RECORD_ID:2047697
