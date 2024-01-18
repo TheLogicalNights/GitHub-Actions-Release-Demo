@@ -5,29 +5,29 @@ services:
     volumes:
       - outputs:/app/outputs:rw
     environment:
-      - API_SERVER:"https://qualysapi.qualys.com"
-      - QUALYS_USERNAME:quays_pg19
-      - QUALYS_PASSWORD:o34kLasNpg
-      - USE_PROXY:false
-      - PROXY_SERVER:null
-      - PROXY_PORT:0
-      - PROXY_USERNAME:null
-      - PROXY_PASSWORD:null
-      - WEBAPP_ID:1069358967
-      - SCAN_NAME:"New WAS Vulnerability Scan launched from API"
-      - SCAN_TYPE:VULNERABILITY
-      - AUTH_RECORD:useDefault
-      - AUTH_RECORD_ID:2047697
-      - OPTION_PROFILE:other
-      - OPTION_PROFILE_ID:50723
-      - CANCEL_OPTION:true
-      - CANCEL_HOURS:5
-      - SEVERITY_CHECK:true
-      - SEVERITY_LEVEL:1
-      - FAIL_ON_SCAN_ERROR:false
-      - INTERVAL:2
-      - TIMEOUT:350
-      - WAIT_FOR_RESULT:true
+      - API_SERVER=https://qualysapi.qualys.com
+      - QUALYS_USERNAME=quays_pg19
+      - QUALYS_PASSWORD=o34kLasNpg
+      - USE_PROXY=false
+      - PROXY_SERVER=null
+      - PROXY_PORT=0
+      - PROXY_USERNAME=null
+      - PROXY_PASSWORD=null
+      - WEBAPP_ID=1069358967
+      - SCAN_NAME="New WAS Vulnerability Scan launched from API"
+      - SCAN_TYPE=VULNERABILITY
+      - AUTH_RECORD=useDefault
+      - AUTH_RECORD_ID=2047697
+      - OPTION_PROFILE=other
+      - OPTION_PROFILE_ID=50723
+      - CANCEL_OPTION=true
+      - CANCEL_HOURS=5
+      - SEVERITY_CHECK=true
+      - SEVERITY_LEVEL=1
+      - FAIL_ON_SCAN_ERROR=false
+      - INTERVAL=2
+      - TIMEOUT=350
+      - WAIT_FOR_RESULT=true
     ports:
       - "8080:8080"
 volumes:
