@@ -133,6 +133,7 @@ runs:
     - name: Debug log
       run: |
         ls ./outputs
+        echo steps.run-app.outcome
       shell: bash
     
     - name: Archive JAR Artifact
