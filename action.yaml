@@ -5,12 +5,78 @@ branding:
   color: 'blue'
 
 inputs:
-  USERNAME:
-    description: 'Username to login'
+  QUALYS_USERNAME:
+    description: "Qualys Username"
     required: true
-  PASSWORD:
-    description: "Password to login"
+  QUALYS_PASSWORD:
+    description: "Qualys Password"
     required: true
+  API_SERVER:
+    description: "API Server URL"
+    required: true
+  SCAN_NAME:
+    description: "Scan Name"
+    required: true
+  SCAN_TYPE:
+    description: "Scan Type"
+    required: true
+  WEBAPP_ID:
+    description: "Webapp ID"
+    required: true
+  USE_PROXY:
+    description: "Use Proxy"
+    required: false
+  PROXY_SERVER:
+    description: "Proxy Server"
+    required: false
+  PROXY_PORT:
+    description: "Proxy Port"
+    required: false
+  PROXY_USERNAME:
+    description: "Proxy Username"
+    required: false
+  PROXY_PASSWORD:
+    description: "Proxy Password"
+    required: false
+  AUTH_RECORD:
+    description: "Auth Record"
+    required: false
+  AUTH_RECORD_ID:
+    description: "Auth Record ID"
+    required: false
+  OPTION_PROFILE:
+    description: "Option Profile"
+    required: false
+  OPTION_PROFILE_ID:
+    description: "Option Profile ID"
+    required: false
+  CANCEL_OPTION:
+    description: "Cancel Option"
+    required: false
+  CANCEL_HOURS:
+    description: "Cancel Hours"
+    required: false
+  SEVERITY_CHECK:
+    description: "Severity Check"
+    required: false
+  SEVERITY_LEVEL:
+    description: "Severity Level"
+    required: false
+  EXCLUDE:
+    description: "Exclude"
+    required: false
+  FAIL_ON_SCAN_ERROR:
+    description: "Fail on Scan Error"
+    required: false
+  WAIT_FOR_RESULT:
+    description: "Wait for Result"
+    required: false
+  INTERVAL:
+    description: "Interval"
+    required: false
+  TIMEOUT:
+    description: "Timeout"
+    required: false
 
 runs:
   using: composite
@@ -34,8 +100,32 @@ runs:
     - name: Deploy Docker Compose
       run: docker-compose up
       env:
-        USERNAME: ${{ inputs.USERNAME }}
-        PASSWORD: ${{ inputs.PASSWORD }}
+        API_SERVER: ${{ inputs.API_SERVER }}
+        QUALYS_USERNAME: ${{ inputs.QUALYS_USERNAME }}
+        QUALYS_PASSWORD: ${{ inputs.QUALYS_PASSWORD }}
+        USE_PROXY: ${{ inputs.USE_PROXY }}
+        PROXY_SERVER: ${{ inputs.PROXY_SERVER }}
+        PROXY_PORT: ${{ inputs.PROXY_PORT }}
+        PROXY_USERNAME: ${{ inputs.PROXY_USERNAME }}
+        PROXY_PASSWORD: ${{ inputs.PROXY_PASSWORD }}
+        WEBAPP_ID: ${{ inputs.WEBAPP_ID }}
+        SCAN_NAME: ${{ inputs.SCAN_NAME }}
+        SCAN_TYPE: ${{ inputs.SCAN_TYPE }}
+        AUTH_RECORD: ${{ inputs.AUTH_RECORD }}
+        AUTH_RECORD_ID: ${{ inputs.AUTH_RECORD_ID }}
+        OPTION_PROFILE: ${{ inputs.OPTION_PROFILE }}
+        OPTION_PROFILE_ID: ${{ inputs.OPTION_PROFILE_ID }}
+        CANCEL_OPTION: ${{ inputs.CANCEL_OPTION }}
+        CANCEL_HOURS: ${{ inputs.CANCEL_HOURS }}
+        SEVERITY_CHECK: ${{ inputs.SEVERITY_CHECK }}
+        SEVERITY_LEVEL: ${{ inputs.SEVERITY_LEVEL }}
+        IS_FAIL_ON_QID_FOUND: ${{ inputs.IS_FAIL_ON_QID_FOUND }}
+        QID_LIST: ${{ inputs.QID_LIST }}
+        EXCLUDE: ${{ inputs.EXCLUDE }}
+        FAIL_ON_SCAN_ERROR: ${{ inputs.FAIL_ON_SCAN_ERROR }}
+        WAIT_FOR_RESULT: ${{ inputs.WAIT_FOR_RESULT }}
+        INTERVAL: ${{ inputs.INTERVAL }}
+        TIMEOUT: ${{ inputs.TIMEOUT }}
       shell: bash
       
     - name: Debug log

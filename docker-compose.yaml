@@ -1,0 +1,39 @@
+version: "3"
+services:
+  myapp:
+    image: sadhav512/test-app:v1.0.4
+    volumes:
+      - outputs:/app/outputs:rw
+    environment:
+      - API_SERVER=${API_SERVER}
+      - QUALYS_USERNAME=${QUALYS_USERNAME}
+      - QUALYS_PASSWORD=${QUALYS_PASSWORD}
+      - USE_PROXY=${USE_PROXY}
+      - PROXY_SERVER=${PROXY_SERVER}
+      - PROXY_PORT=${PROXY_PORT}
+      - PROXY_USERNAME=${PROXY_USERNAME}
+      - PROXY_PASSWORD=${PROXY_PASSWORD}
+      - WEBAPP_ID=${WEBAPP_ID}
+      - SCAN_NAME=${SCAN_NAME}
+      - SCAN_TYPE=${SCAN_TYPE}
+      - AUTH_RECORD=${AUTH_RECORD}
+      - AUTH_RECORD_ID=${AUTH_RECORD_ID}
+      - OPTION_PROFILE=${OPTION_PROFILE}
+      - OPTION_PROFILE_ID=${OPTION_PROFILE_ID}
+      - CANCEL_OPTION=${CANCEL_OPTION}
+      - CANCEL_HOURS=${CANCEL_HOURS}
+      - SEVERITY_CHECK=${SEVERITY_CHECK}
+      - SEVERITY_LEVEL=${SEVERITY_LEVEL}
+      - FAIL_ON_SCAN_ERROR=${FAIL_ON_SCAN_ERROR}
+      - INTERVAL=${INTERVAL}
+      - TIMEOUT=${TIMEOUT}
+      - WAIT_FOR_RESULT=${WAIT_FOR_RESULT}
+    ports:
+      - "8080:8080"
+volumes:
+  outputs:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: outputs
