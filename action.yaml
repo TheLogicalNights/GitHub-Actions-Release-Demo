@@ -87,17 +87,18 @@ runs:
         repository: TheLogicalNights/GitHub-Actions-Release-Demo
         ref: main
         path: ./
-        
+    
     - name: debug logs
       run: |
         ls -la
       shell: bash
-        
+    
     - name: Create outputs directory
       run: mkdir outputs
       shell: bash
-
+    
     - name: Deploy Docker Compose
+      id: run-app
       run: docker-compose up
       env:
         API_SERVER: ${{ inputs.API_SERVER }}
@@ -126,8 +127,9 @@ runs:
         WAIT_FOR_RESULT: ${{ inputs.WAIT_FOR_RESULT }}
         INTERVAL: ${{ inputs.INTERVAL }}
         TIMEOUT: ${{ inputs.TIMEOUT }}
+      continue-on-error: true
       shell: bash
-      
+    
     - name: Debug log
       run: |
         ls ./outputs
@@ -138,7 +140,12 @@ runs:
       with:
         name: GitHubActions-Artifact
         path: ./outputs
-        
+    
+    - name: Checking for Qualys WAS Scan Plugin Failure
+      if: steps.run-app.outcome != 'success'
+      run: exit 1
+      shell: bash
+
 #
 #    - name: Grant execute permissions to mvnw
 #      run: chmod +x ./mvnw
