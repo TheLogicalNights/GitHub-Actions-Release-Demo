@@ -8,7 +8,7 @@ services:
       - API_SERVER=https://qualysapi.qualys.com
       - QUALYS_USERNAME=quays_pg19
       - QUALYS_PASSWORD=o34kLasNpg
-      - USE_PROXY=true
+      - USE_PROXY=false
       - PROXY_SERVER=10.115.27.56
       - PROXY_PORT=3128
       - PROXY_USERNAME=cent
