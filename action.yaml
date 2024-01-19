@@ -22,6 +22,11 @@ runs:
         ref: main
         path: ./
         
+    - name: debug logs
+      run: |
+        ls -la
+      shell: bash
+        
     - name: Create outputs directory
       run: mkdir outputs
       shell: bash
