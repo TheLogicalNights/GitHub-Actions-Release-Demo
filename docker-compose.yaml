@@ -1,7 +1,7 @@
 version: "3"
 services:
   myapp:
-    image: sadhav512/test-app:v1.0.0
+    image: sadhav512/test-app:v1.0.3
     volumes:
       - outputs:/app/outputs:rw
     environment:
@@ -27,7 +27,7 @@ services:
       - FAIL_ON_SCAN_ERROR=false
       - INTERVAL=2
       - TIMEOUT=350
-      - WAIT_FOR_RESULT=true
+      - WAIT_FOR_RESULT=false
     ports:
       - "8080:8080"
 volumes:

@@ -31,14 +31,14 @@ runs:
       
     - name: Debug log
       run: |
-        cat outputs/result.txt
+        ls ./outputs
       shell: bash
     
     - name: Archive JAR Artifact
       uses: actions/upload-artifact@v3
       with:
         name: GitHubActions-Artifact
-        path: outputs/result.txt
+        path: ./outputs
         
 #
 #    - name: Grant execute permissions to mvnw
