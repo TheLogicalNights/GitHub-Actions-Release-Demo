@@ -21,6 +21,10 @@ runs:
         repository: TheLogicalNights/GitHub-Actions-Release-Demo
         ref: main
         path: ./
+        
+    - name: Create outputs directory
+      run: mkdir outputs
+      shell: bash
 
     - name: Deploy Docker Compose
       run: docker-compose up
