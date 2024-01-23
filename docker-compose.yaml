@@ -1,6 +1,6 @@
 version: "3"
 services:
-  my-app:
+  myapp:
     image: sadhav512/test-app:v1.0.10
     volumes:
       - outputs:/app/outputs:rw
