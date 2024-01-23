@@ -133,7 +133,7 @@ runs:
     - name: Check Docker Container Exit Code
       run: |
         exit_code=$(docker-compose ps -q Qualys-WAS-Scan-Plugin | xargs docker inspect --format='{{.State.ExitCode}}')
-        echo "Exit Code: $exit_code"
+        echo $exit_code
       shell: bash
     
     - name: Debug log
@@ -148,12 +148,12 @@ runs:
         name: GitHubActions-Artifact
         path: ./outputs
     
-    - name: Checking for Qualys WAS Scan Plugin Failure
-      if: |
-        "$exit_code" != "0"
-      run: |
-        echo "Exit Code: $exit_code"
-      shell: bash
+#    - name: Checking for Qualys WAS Scan Plugin Failure
+#      if: |
+#        "$exit_code" != "0"
+#      run: |
+#        echo "Exit Code: $exit_code"
+#      shell: bash
 
 #
 #    - name: Grant execute permissions to mvnw
