@@ -129,6 +129,12 @@ runs:
         TIMEOUT: ${{ inputs.TIMEOUT }}
       continue-on-error: true
       shell: bash
+      
+    - name: Check Docker Container Exit Code
+      run: |
+        exit_code=$(docker-compose ps -q Qualys-WAS-Scan-Plugin | xargs docker inspect --format='{{.State.ExitCode}}')
+        echo "Exit Code: $exit_code"
+      shell: bash
     
     - name: Debug log
       run: |
