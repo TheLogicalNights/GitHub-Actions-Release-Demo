@@ -1,6 +1,6 @@
 version: "3"
 services:
-  Qualys-WAS-Scan-Plugin:
+  my-app:
     image: sadhav512/test-app:v1.0.10
     volumes:
       - outputs:/app/outputs:rw
