@@ -149,8 +149,8 @@ runs:
         path: ./outputs
     
     - name: Checking for Qualys WAS Scan Plugin Failure
-      #      if: steps.run-app.outcome != 'success'
-      run: echo ${{steps.run-app.outcome}}
+      if: $(docker-compose ps -q Qualys-WAS-Scan-Plugin | xargs docker inspect --format='{{.State.ExitCode}}') != 0
+      run: exit 1
       shell: bash
 
 #
