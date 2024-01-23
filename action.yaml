@@ -149,7 +149,7 @@ runs:
         path: ./outputs
     
     - name: Checking for Qualys WAS Scan Plugin Failure
-      if: $exit_code != 0
+      if: exit_code != 0
       run: exit 1
       shell: bash
 
